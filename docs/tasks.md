@@ -8,12 +8,15 @@ This backlog is derived from `docs/fitness-app-spec.md` and `docs/user-stories.m
 - Complete tasks top-down unless a task explicitly has no dependency.
 - Mark completion by changing `[ ]` to `[x]` in the Status column.
 - Each task has a dedicated implementation doc under `docs/tasks/`.
+- Use components from shadcn in `@/components/ui/*` wherever available.
+- If a shadcn component is missing, install it with `pnpm dlx shadcn@latest add <component-name>`.
+- After completing each task, add a short summary entry in the **Task Completion Summaries** section at the bottom of this file.
 
 ## Task Board
 
 | Status | ID   | Task                                                  | Depends On                               | Priority | Details                                                                             |
 | ------ | ---- | ----------------------------------------------------- | ---------------------------------------- | -------- | ----------------------------------------------------------------------------------- |
-| [ ]    | T001 | Project foundation and architecture setup             | -                                        | P0       | [docs/tasks/T001-project-foundation.md](tasks/T001-project-foundation.md)           |
+| [x]    | T001 | Project foundation and architecture setup             | -                                        | P0       | [docs/tasks/T001-project-foundation.md](tasks/T001-project-foundation.md)           |
 | [ ]    | T002 | Database and Drizzle bootstrap                        | T001                                     | P0       | [docs/tasks/T002-db-drizzle-bootstrap.md](tasks/T002-db-drizzle-bootstrap.md)       |
 | [ ]    | T003 | Better Auth + Google OAuth integration                | T001, T002                               | P0       | [docs/tasks/T003-auth-google-oauth.md](tasks/T003-auth-google-oauth.md)             |
 | [ ]    | T004 | User onboarding and profile capture                   | T003                                     | P0       | [docs/tasks/T004-onboarding-profile.md](tasks/T004-onboarding-profile.md)           |
@@ -44,3 +47,13 @@ A task can be marked done only when:
 1. Its Definition of Done in the task file is satisfied.
 2. Dependencies are already marked done in this board.
 3. Related acceptance criteria in `docs/user-stories.md` are covered.
+
+## Task Completion Summaries
+
+### T001 - Project foundation and architecture setup
+
+- Added route groups: `app/(public)` and `app/(app)` with core area placeholders (`auth/sign-in`, `onboarding`, `workouts`, `templates`, `diet`, `profile`).
+- Added loading and error boundaries for both route groups.
+- Added shared foundation modules: `lib/errors/app-error.ts`, `lib/constants/routes.ts`, `lib/constants/workout.ts`, `lib/validation/index.ts`, `lib/env.ts`, and `types/domain.ts`.
+- Added placeholders for upcoming tasks: `lib/auth`, `lib/db`, `lib/calories`.
+- Added `.env.example` with auth and database placeholders and updated `README.md` with architecture/environment notes.

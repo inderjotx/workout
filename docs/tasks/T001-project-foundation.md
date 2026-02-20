@@ -24,28 +24,16 @@ Establish the base project architecture, folder conventions, and shared engineer
 1. Create app route groups:
    - `(public)` for landing/auth entry
    - `(app)` for authenticated areas
-2. Add shared folders:
-   - `lib/auth`, `lib/db`, `lib/validation`, `lib/calories`, `lib/constants`
-   - `types/` for app-level interfaces where needed
-3. Add config files (if missing):
-   - `.env.example` with required keys
-   - `drizzle.config.ts` placeholder (completed in T002)
-4. Standardize error handling pattern:
+2. Standardize error handling pattern:
    - typed server errors
    - user-safe error messages
-5. Add loading/error UI conventions for key route groups.
+3. Add loading/error UI conventions for key route groups.
 
 ## Deliverables
 
 - Baseline folder architecture committed.
 - `.env.example` with auth/db placeholders.
 - Architecture note in README (short section only).
-
-## Definition of Done
-
-- Core route groups and shared library folders exist.
-- Environment contract is documented.
-- No lint/type errors introduced by structure changes.
 
 ## Risks and Notes
 

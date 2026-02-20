@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org) project for a mobile-first fitness tracking app.
 
 ## Getting Started
 
@@ -16,9 +16,26 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can start editing the public home page by modifying `app/(public)/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Architecture (Foundation)
+
+- Route groups:
+  - `app/(public)` for public routes like home and sign-in.
+  - `app/(app)` for authenticated app areas (`onboarding`, `workouts`, `templates`, `diet`, `profile`).
+- Shared foundation libraries:
+  - `lib/errors` for typed app errors and user-safe messages.
+  - `lib/constants` for routes and domain constants.
+  - `lib/validation` for reusable server-side validation helpers.
+  - `lib/env.ts` for required environment key checks.
+
+## Environment Setup
+
+1. Copy `.env.example` to `.env.local`.
+2. Fill required values for database and auth keys.
+3. Restart the dev server after updates.
 
 ## Learn More
 
